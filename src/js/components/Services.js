@@ -312,7 +312,7 @@ class Services extends React.Component{
 						{this.props.spotify.authorization ? <span className="status green-text">Authorized</span> : <span className="status grey-text">Read-only</span>}
 					</Link>
 				</div>
-				<div className="menu-item-wrapper">
+				<div className="menu-item-wrapper hidden">
 					<Link className={"menu-item"+(this.props.active == 'lastfm' ? ' active' : '')} to={this.props.active == 'lastfm' ? global.baseURL+'settings' : global.baseURL+'settings/service/lastfm'}>
 						{lastfm_icon}
 						<div className="title">
@@ -321,7 +321,7 @@ class Services extends React.Component{
 						{this.props.lastfm.session ? <span className="status green-text">Authorized</span> : <span className="status grey-text">Read-only</span>}
 					</Link>
 				</div>
-				<div className="menu-item-wrapper">
+				<div className="menu-item-wrapper hidden">
 					<Link className={"menu-item"+(this.props.active == 'genius' ? ' active' : '')} to={this.props.active == 'genius' ? global.baseURL+'settings' : global.baseURL+'settings/service/genius'}>
 						{genius_icon}
 						<div className="title">
@@ -330,7 +330,7 @@ class Services extends React.Component{
 						{this.props.genius.authorization ? <span className="status green-text">Authorized</span> : <span className="status grey-text">Unauthorized</span>}
 					</Link>
 				</div>
-				<div className="menu-item-wrapper">
+				<div className="menu-item-wrapper hidden">
 					<Link className={"menu-item"+(this.props.active == 'snapcast' ? ' active' : '')} to={this.props.active == 'snapcast' ? global.baseURL+'settings' : global.baseURL+'settings/service/snapcast'}>
 						<Icon name="devices" />
 						<div className="title">
@@ -339,7 +339,7 @@ class Services extends React.Component{
 						{this.props.pusher.config.snapcast_enabled ? <span className="status green-text">Enabled</span> : <span className="status grey-text">Disabled</span>}
 					</Link>
 				</div>
-				<div className="menu-item-wrapper">
+				<div className="menu-item-wrapper hidden">
 					<Link className={"menu-item"+(this.props.active == 'icecast' ? ' active' : '')} to={this.props.active == 'icecast' ? global.baseURL+'settings' : global.baseURL+'settings/service/icecast'}>
 						<Icon name="wifi_tethering" />
 						<div className="title">

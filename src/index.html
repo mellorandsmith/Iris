@@ -5,26 +5,29 @@
 
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta content="width=device-width, initial-scale=1" name="viewport" />
-	<meta name="viewport" content="width=device-width" />
 
-	<link rel="manifest" href="/iris/manifest.json" />
-
-	<!-- App setup -->
+	<meta name="mobile-web-app-capable" content="yes" >
 	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta name="apple-mobile-web-app-title" content="Iris" />
-	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta name="apple-mobile-web-app-status-bar-style" content="#121212" />
-	<meta name="mobile-web-app-capable" content="yes" />
 	<meta name="theme-color" content="#222222" />
-	
-	<!-- Icons -->
-	<link rel="apple-touch-startup-image" href="/iris/assets/app-icon_512.png" />
-	<link rel="apple-touch-icon" sizes="192x192" href="/iris/assets/logo-app_192.png" />
-	<link rel="apple-touch-icon" sizes="512x512" href="/iris/assets/logo-app_512.png" />
-	<link rel="shortcut icon" type="image/ico" href="/iris/assets/app-icon_64.png" />
-	<link rel="shortcut icon" type="image/x-icon" href="/iris/assets/app-icon_64.png" />
-	<link rel="shortcut-icon" href="/iris/assets/app-icon_64.png" />
-	<link rel="mask-icon" href="/iris/assets/app-icon.svg" color="#08d58f" />
+	<meta name="viewport" content="width=device-width">
+
+	<link rel="shortcut icon" type="image/ico" href="./assets/favicon.ico" />
+	<link rel="shortcut icon" type="image/x-icon" href="./assets/favicon.ico" />
+	<link rel="shortcut-icon" href="./assets/favicon.ico" />
+
+	<!-- Chrome app -->
+	<link rel="manifest" href="./assets/manifest.json">
+
+	<!-- Apple app -->
+	<meta name="apple-mobile-web-app-title" content="MelloMusic" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+
+	<meta name="apple-mobile-web-app-status-bar-style" content="#ff366a">
+	<link rel="apple-touch-startup-image" href="./assets/logo-full-512.png" />
+	<link rel="apple-touch-icon" sizes="192x192" href="./assets/logo-app-192.png" />
+	<link rel="apple-touch-icon" sizes="512x512" href="./assets/logo-app-512.png" />
+
+	<link rel="mask-icon" href="/iris/assets/icon_coloured.svg" color="#08d58f" />
 
 	<!-- Loading screen styles -->
 	<style>
@@ -118,10 +121,14 @@
 		var test_mode = false;
 	}
 
+	if (location.hostname === "localhost" || location.hostname === "127.0.0.1" || location.hostname === "192.168.0.3"){
+		var test_mode = true;
+	}
+
 	// Test mode, use un-minified code
     if (test_mode){
-	    css.href = '/iris/app.css?v='+build;
-	    js.src = '/iris/app.js?v='+build;
+	    css.href = '/mellomusic/mopidy_iris/static/app.css?v='+build;
+	    js.src = '/mellomusic/mopidy_iris/static/app.js?v='+build;
 
     // Production-grade, minified app
     } else {

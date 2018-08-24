@@ -26,9 +26,11 @@ class Settings extends React.Component {
 
 	constructor(props){
 		super(props);
+		/*mopidy_host: this.props.mopidy.host,
+		mopidy_port: this.props.mopidy.port,*/
 		this.state = {
-			mopidy_host: this.props.mopidy.host,
-			mopidy_port: this.props.mopidy.port,
+			mopidy_host: "192.168.0.3",
+			mopidy_port: "6680",
 			mopidy_ssl: this.props.mopidy.ssl,
 			mopidy_library_artists_uri: this.props.mopidy.library_artists_uri,
 			mopidy_library_albums_uri: this.props.mopidy.library_albums_uri,
@@ -148,10 +150,10 @@ class Settings extends React.Component {
 
 		var options = (
 			<span>
-				<button className="no-hover" onClick={e => hashHistory.push(global.baseURL+'settings/debug')}>
+				<button className="no-hover hidden" onClick={e => hashHistory.push(global.baseURL+'settings/debug')}>
 					<Icon name="code" />Debug
 				</button>
-				<a className="no-hover button" href="https://github.com/jaedb/Iris/wiki" target="_blank">
+				<a className="no-hover button hidden" href="https://github.com/jaedb/Iris/wiki" target="_blank">
 					<Icon name="help" />Help
 				</a>
 			</span>
@@ -206,7 +208,7 @@ class Settings extends React.Component {
 								onBlur={e => this.handleUsernameBlur(e)}
 								value={this.state.pusher_username } />
 							<div className="description">
-								A non-unique string used to identify this client (no special characters)
+								A unique DJ name to differentiate your style to the others
 							</div>
 						</div>
 					</div>
@@ -215,7 +217,7 @@ class Settings extends React.Component {
 						<div className="field">
 							<div className="name">Host</div>
 							<div className="input">
-								<input 
+								<input disabled
 									type="text"
 									onChange={ e => this.setState({mopidy_host: e.target.value})} 
 									onFocus={e => this.setState({input_in_focus: 'mopidy_host'})}
@@ -226,7 +228,7 @@ class Settings extends React.Component {
 						<div className="field">
 							<div className="name">Port</div>
 							<div className="input">
-								<input 
+								<input disabled
 									type="text"
 									onChange={ e => this.setState({mopidy_port: e.target.value})} 
 									onFocus={e => this.setState({input_in_focus: 'mopidy_port'})} 
@@ -234,7 +236,7 @@ class Settings extends React.Component {
 									value={ this.state.mopidy_port } />
 							</div>
 						</div>
-						<div className="field checkbox">
+						<div className="field checkbox hidden">
 							<div className="name">Encryption</div>
 							<div className="input">
 								<label>
@@ -256,9 +258,9 @@ class Settings extends React.Component {
 					<h4 className="underline">Services</h4>
 					<Services active={this.props.params.sub_view} />
 
-					{helpers.isHosted() ? null : <h4 className="underline">Privacy</h4>}
+					{helpers.isHosted() ? null : <h4 className="underline hidden">Privacy</h4>}
 
-					{helpers.isHosted() ? null : <div className="field checkbox">
+					{helpers.isHosted() ? null : <div className="field checkbox hidden">
 						<div className="name">Reporting</div>
 						<div className="input">
 							<label>
@@ -304,7 +306,7 @@ class Settings extends React.Component {
 						</div>
 					</div>
 
-					<div className="field sources-priority">
+					<div className="field sources-priority hidden">
 						<div className="name has-tooltip">
 							Sources priority
 							<span className="tooltip">Order of searching and search results</span>
@@ -318,7 +320,7 @@ class Settings extends React.Component {
 			        	</div>
 			        </div>
 
-					<div className="field">
+					<div className="field hidden">
 						<div className="name">Artist library URI</div>
 						<div className="input">
 							<input 
@@ -333,7 +335,7 @@ class Settings extends React.Component {
 						</div>
 					</div>
 
-					<div className="field">
+					<div className="field hidden">
 						<div className="name">Album library URI</div>
 						<div className="input">
 							<input 
@@ -366,16 +368,16 @@ class Settings extends React.Component {
 				        </div>
 			        </div>
 					
-					<div className="field">
+					<div className="field hidden">
 				        <button onClick={e => this.props.ui.install_prompt.prompt()} disabled={this.props.ui.install_prompt ? false : true}>Install as App</button>
 						{upgrade_button}
 				        <button className={"destructive"+(this.props.mopidy.restarting ? ' working' : '')} onClick={e => this.props.pusherActions.restart()}>{this.props.mopidy.restarting ? 'Restarting...' : 'Restart server'}</button>
 				        <ConfirmationButton className="destructive" content="Reset all settings" confirmingContent="Are you sure?" onConfirm={() => this.resetAllSettings()} />
 			        </div>
 
-					<h4 className="underline">About</h4>
+					<h4 className="underline hidden">About</h4>
 
-					<div className="field">
+					<div className="field hidden">
 						<div>
 							<em><a href="https://github.com/jaedb/Iris" target="_blank">Iris</a></em> is an open-source project by <a href="https://github.com/jaedb" target="_blank">James Barnsley</a>. It is provided free and with absolutely no warranty. If you paid someone for this software, please let me know.
 						</div>
