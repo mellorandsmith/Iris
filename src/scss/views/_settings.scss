@@ -69,12 +69,6 @@
 	}
 
 	@include responsive($bp_medium){
-		.intro {
-			.liner {
-				padding: 15vh 20px 0;
-			}
-		}
-
 		.content-wrapper {
 			padding-bottom: 60px;
 		}
