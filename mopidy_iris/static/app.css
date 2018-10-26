@@ -3703,7 +3703,7 @@ input[type="submit"] {
     padding: 2px 10px 1px; }
     .actions .context-menu-trigger:hover {
       cursor: pointer;
-      color: #32b5f2 !important; }
+      color: #ff366a !important; }
   h4 .context-menu-trigger,
   h4 .context-menu-trigger:active {
     margin: -8px 0 0 10px; }
@@ -4167,46 +4167,9 @@ $icon-websocket: \e920;
         transition: all 0.1s ease-in-out;
         content: '';
         display: block;
-        background: #08d58f;
+        background: #ff366a;
         position: absolute;
         top: 0;
-<<<<<<< HEAD
-        height: 100%;
-        max-width: 100%;
-        border-radius: 4px; }
-        .slider.horizontal .track .progress:after {
-          -webkit-transition: all 0.1s ease-in-out;
-          -moz-transition: all 0.1s ease-in-out;
-          -o-transition: all 0.1s ease-in-out;
-          transition: all 0.1s ease-in-out;
-          content: '';
-          display: block;
-          background: #ff366a;
-          position: absolute;
-          top: 0;
-          right: -1px;
-          width: 4px;
-          height: 4px;
-          border-radius: 50%; }
-    .slider.horizontal:hover .track .progress:after {
-      width: 12px;
-      height: 12px;
-      top: -4px;
-      right: -6px;
-      background: #ff6990; }
-  .slider.vertical {
-    width: 20px;
-    height: 100%; }
-    .slider.vertical .track {
-      width: 5px;
-      top: 0;
-      bottom: 0;
-      left: 12px; }
-      .slider.vertical .track .progress {
-        bottom: 0;
-        width: 100%;
-        max-height: 100%; }
-=======
         right: -1px;
         width: 4px;
         height: 4px;
@@ -4220,8 +4183,7 @@ $icon-websocket: \e920;
     height: 12px;
     top: -4px;
     right: -6px;
-    background: #1af6ab; }
->>>>>>> upstream/master
+    background: #ff6990; }
 
 .playback-controls {
   position: fixed;
@@ -4825,17 +4787,12 @@ aside {
   .list .list-item.selected {
     background: rgba(255, 255, 255, 0.08) !important; }
     .list .list-item.selected .select-zone::after {
-<<<<<<< HEAD
       background: #ff366a;
       border-color: #ff366a !important; }
-=======
-      background: #32b5f2;
-      border-color: #32b5f2 !important; }
   .light-theme .list .list-item {
     border-color: rgba(0, 0, 0, 0.05); }
     .light-theme .list .list-item.selected {
       background: #f4f2f0 !important; }
->>>>>>> upstream/master
   .list .list-item.playing {
     color: #ff366a; }
   .list .list-item .select-zone,
@@ -5468,7 +5425,7 @@ main header {
         color: #121212; }
         .light-theme main header .options .button:hover, .light-theme
         main header .options button:hover {
-          color: #32b5f2; }
+          color: #ff366a; }
   main header.overlay {
     position: absolute;
     top: 0;
@@ -5872,7 +5829,7 @@ main header {
       .light-theme .sources-priority-field .source:hover {
         background: #ebe8e4; }
       .light-theme .sources-priority-field .source:focus, .light-theme .sources-priority-field .source:active {
-        background: #32b5f2;
+        background: #ff366a;
         color: #FFFFFF; }
 
 .sub-views .option {
@@ -6774,7 +6731,6 @@ main .track-view {
       .discover-new-releases-view .intro .content .thumbnail {
         max-width: 40%; } }
 
-<<<<<<< HEAD
 .settings-view .intro {
   position: relative; }
   .settings-view .intro::after {
@@ -6800,8 +6756,6 @@ main .track-view {
 .settings-view .content-wrapper {
   padding-top: 0; }
 
-=======
->>>>>>> upstream/master
 .settings-view .field.current-user .text .user {
   border: 0;
   position: relative; }
